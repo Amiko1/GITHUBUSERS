@@ -68,11 +68,7 @@ export default createStore({
         url = user;
       }
       return new Promise((resolve, reject) => {
-        axios.get(url + username, {
-          headers: {
-            "Authorization": "Token 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"
-          }
-        })
+        axios.get(url + username)
           .then(response => {
             commit('setSpinner', false);
             if (type == 'User' && response.data.type != 'User') {
